@@ -14,10 +14,10 @@ class Walletd:
         $ walletd -w test.wallet -p mypw --local --rpc-password test
     """
 
-    def __init__(self, password, host='209.97.174.174', port=11898):
-        self.url = f'http://{host}:{port}'
+    def __init__(self, host='127.0.0.1', port=11898):
+        self.url = f'http://{host}:{port}/json_rpc'
         self.headers = {'content-type': 'application/json'}
-        self.password = password
+        self.password = "password"
 
     def _make_request(self, method, **kwargs):
         payload = {

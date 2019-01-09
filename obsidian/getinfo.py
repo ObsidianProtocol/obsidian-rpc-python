@@ -1,5 +1,4 @@
 from obsidian import Obsidiand
-from flask import request
 
 #one of the seed nodes
 rpc_host = '209.97.174.174'
@@ -14,3 +13,4 @@ obsidiand = Obsidiand(rpc_host, rpc_port)
 #look at obsidiand.py
 def read():
     return obsidiand.get_info()
+print(read())

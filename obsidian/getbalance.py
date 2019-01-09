@@ -1,10 +1,11 @@
 from walletd import Walletd
 
+rpc_host = '209.97.174.174'
+rpc_port = 11898
 
-walletd = Walletd("password")
+walletd = Walletd(rpc_host,rpc_port)
 
-def read(address):
-    balance = walletd.get_transaction(address)
-    print(balance)
-
-print(read("XSDFyFytzFxDhiZBLutnC4BWDDqPevQLRRadqURdnK4fMagRDhLd4gphtHFMq4xxDDgiDSTxc7xj6bNscBf5YKue57hH7bwmTE"))
+def read():
+    response = walletd.get_status()
+    print(response)
+print(read())
