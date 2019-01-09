@@ -13,3 +13,5 @@ obsidiand = Obsidiand(rpc_host, rpc_port)
 #look at obsidiand.py
 def read():
     return obsidiand.get_info()
+
+print(read())
