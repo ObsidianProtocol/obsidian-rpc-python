@@ -30,6 +30,7 @@ class Walletd:
         logging.debug(json.dumps(payload, indent=4))
         response = requests.post(self.url,
                                  data=json.dumps(payload)).json()
+        print(response)
         if 'error' in response:
             raise ValueError(response['error'])
         return response
