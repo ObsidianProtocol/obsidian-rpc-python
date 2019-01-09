@@ -13,5 +13,4 @@ obsidiand = Obsidiand(rpc_host, rpc_port)
 #possible commands:
 #look at obsidiand.py
 def read(txid):
-    print("The txhash " + str(txid))
     return obsidiand.get_transaction(txid)

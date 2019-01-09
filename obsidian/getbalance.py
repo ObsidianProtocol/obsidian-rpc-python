@@ -5,7 +5,7 @@ rpc_port = 11898
 
 walletd = Walletd(rpc_host,rpc_port)
 
-def read():
+def read(address):
     response = walletd.get_status()
     print(response)
-print(read())
+read("XSDFyFytzFxDhiZBLutnC4BWDDqPevQLRRadqURdnK4fMagRDhLd4gphtHFMq4xxDDgiDSTxc7xj6bNscBf5YKue57hH7bwmTE")

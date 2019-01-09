@@ -82,3 +82,28 @@ paths:
                   type: "string"
                 timestamp:
                   type: "string"
+/getbalance:
+  get:
+    parameters:
+      - in: query
+        name: address
+        type: string
+        required: True
+    operationId: "gettransaction.read"
+    tags:
+      - "Address search"
+    summary: "Returns balance"
+    description: "Returns balance"
+    responses:
+      200:
+        description: "Successful read balance"
+        schema:
+          type: "array"
+          items:
+            properties:
+              fname:
+                type: "string"
+              lname:
+                type: "string"
+              timestamp:
+                type: "string"
