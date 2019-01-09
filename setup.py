@@ -12,9 +12,9 @@ from shutil import rmtree
 from setuptools import find_packages, setup, Command
 
 # Package meta-data.
-NAME = 'turtlecoin'
-DESCRIPTION = 'A Python wrapper for the TurtleCoin JSON-RPC interface'
-URL = 'https://github.com/arthurk/turtlecoin-python/'
+NAME = 'obsidian'
+DESCRIPTION = 'A Python wrapper for the obsidian JSON-RPC interface'
+URL = 'https://github.com/arthurk/obsidian-python/'
 EMAIL = 'arthur@arthurkoziel.com'
 AUTHOR = 'Arthur Koziel'
 REQUIRES_PYTHON = '>=3.6.0'

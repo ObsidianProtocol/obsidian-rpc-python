@@ -2,7 +2,7 @@ import json
 import logging
 import requests
 
-from .utils import convert_bytes_to_hex_str
+from utils import convert_bytes_to_hex_str
 
 
 class Walletd:
@@ -14,8 +14,8 @@ class Walletd:
         $ walletd -w test.wallet -p mypw --local --rpc-password test
     """
 
-    def __init__(self, password, host='127.0.0.1', port=8070):
-        self.url = f'http://{host}:{port}/json_rpc'
+    def __init__(self, password, host='209.97.174.174', port=11898):
+        self.url = f'http://{host}:{port}'
         self.headers = {'content-type': 'application/json'}
         self.password = password
 
@@ -29,8 +29,9 @@ class Walletd:
         }
         logging.debug(json.dumps(payload, indent=4))
         response = requests.post(self.url,
-                                 data=json.dumps(payload),
-                                 headers=self.headers).json()
+                                 data=json.dumps(payload))
+        print("the response is")
+        print(response)
         if 'error' in response:
             raise ValueError(response['error'])
         return response
@@ -40,15 +41,15 @@ class Walletd:
         Re-syncs the wallet
 
         Note:
-            If the view_secret_key parameter is not specified, the reset() method resets the 
-            wallet and re-syncs it. If the view_secret_key argument is specified, reset() 
+            If the view_secret_key parameter is not specified, the reset() method resets the
+            wallet and re-syncs it. If the view_secret_key argument is specified, reset()
             method substitutes the existing wallet with a new one with a specified
             view_secret_key and creates an address for it.
-            
+
         """
         params = {'viewSecretKey': view_secret_key}
         return self._make_request('reset', **params)
-    
+
     def save(self):
         """
         Save the wallet

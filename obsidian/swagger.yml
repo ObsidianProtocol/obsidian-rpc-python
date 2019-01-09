@@ -1,0 +1,84 @@
+swagger: "2.0"
+info:
+  description: This is the swagger file that goes with our server code
+  version: "1.0.0"
+  title: Swagger REST Article
+consumes:
+  - "application/json"
+produces:
+  - "application/json"
+
+basePath: "/obsidian"
+
+# Paths supported by the server application
+paths:
+  /getinfo:
+    get:
+      operationId: "getinfo.read"
+      tags:
+        - "Obsidian"
+      summary: "General information of the blockchain"
+      description: "Read obsidian blockchain"
+      responses:
+        200:
+          description: "Successful read blockchain information"
+          schema:
+            type: "array"
+            items:
+              properties:
+                fname:
+                  type: "string"
+                lname:
+                  type: "string"
+                timestamp:
+                  type: "string"
+  /getblockheaderbyhash:
+    get:
+      parameters:
+        - in: query
+          name: hash
+          type: string
+          required: True
+      operationId: "getblockheaderbyhash.read"
+      tags:
+        - "Obsidiad Block Header by Hash"
+      summary: "Returns last block header by given hash."
+      description: "Returns last block header by given hash."
+      responses:
+        200:
+          description: "Successful read last block header"
+          schema:
+            type: "array"
+            items:
+              properties:
+                fname:
+                  type: "string"
+                lname:
+                  type: "string"
+                timestamp:
+                  type: "string"
+  /gettransaction:
+    get:
+      parameters:
+        - in: query
+          name: txid
+          type: string
+          required: True
+      operationId: "gettransaction.read"
+      tags:
+        - "Obsidiad Block Header by Hash"
+      summary: "Returns last block header by given hash."
+      description: "Returns last block header by given hash."
+      responses:
+        200:
+          description: "Successful read last block header"
+          schema:
+            type: "array"
+            items:
+              properties:
+                fname:
+                  type: "string"
+                lname:
+                  type: "string"
+                timestamp:
+                  type: "string"
