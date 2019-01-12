@@ -12,7 +12,7 @@ basePath: "/obsidian"
 
 # Paths supported by the server application
 paths:
-  /getinfo:
+ /getinfo:
     get:
       operationId: "getinfo.read"
       tags:
@@ -32,7 +32,7 @@ paths:
                   type: "string"
                 timestamp:
                   type: "string"
-  /getblockheaderbyhash:
+ /getblockheaderbyhash:
     get:
       parameters:
         - in: query
@@ -57,7 +57,28 @@ paths:
                   type: "string"
                 timestamp:
                   type: "string"
-  /gettransaction:
+
+ /getlastblockheader:
+    get:
+      operationId: "getlastblockheader.read"
+      tags:
+        - "Obsidian Block Header by Hash"
+      summary: "Returns last block header by given hash."
+      description: "Returns last block header by given hash."
+      responses:
+        200:
+          description: "Successful read last block header"
+          schema:
+            type: "array"
+            items:
+              properties:
+                fname:
+                  type: "string"
+                lname:
+                  type: "string"
+                timestamp:
+                  type: "string"
+ /getl:
     get:
       parameters:
         - in: query
@@ -82,28 +103,3 @@ paths:
                   type: "string"
                 timestamp:
                   type: "string"
-/getbalance:
-  get:
-    parameters:
-      - in: query
-        name: address
-        type: string
-        required: True
-    operationId: "gettransaction.read"
-    tags:
-      - "Address search"
-    summary: "Returns balance"
-    description: "Returns balance"
-    responses:
-      200:
-        description: "Successful read balance"
-        schema:
-          type: "array"
-          items:
-            properties:
-              fname:
-                type: "string"
-              lname:
-                type: "string"
-              timestamp:
-                type: "string"

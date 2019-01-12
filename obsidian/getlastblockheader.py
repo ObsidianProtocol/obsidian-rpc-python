@@ -12,4 +12,4 @@ obsidiand = Obsidiand(rpc_host, rpc_port)
 #possible commands:
 #look at obsidiand.py
 def read():
-    return obsidiand.get_info()
+    return obsidiand.get_last_block_header()
