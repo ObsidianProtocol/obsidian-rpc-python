@@ -13,5 +13,5 @@ obsidiand = Obsidiand(rpc_host, rpc_port)
 #possible commands:
 #look at obsidiand.py
 def read():
-    latestTransaction = obsidiand.get_last_block_header()['result']['block_header']["hash"]["transactions"]
-    return obsidiand.get_block(latestHash)
+    latestHash = obsidiand.get_last_block_header()['result']['block_header']["hash"]
+    return obsidiand.get_block(latestHash)['result']['block']["transactions"]

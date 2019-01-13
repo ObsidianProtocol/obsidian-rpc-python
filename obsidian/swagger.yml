@@ -32,6 +32,26 @@ paths:
                   type: "string"
                 timestamp:
                   type: "string"
+ /gettransaction:
+    get:
+      operationId: "gettransaction.read"
+      tags:
+        - "Obsidian"
+      summary: "General information of the blockchain"
+      description: "Read obsidian blockchain"
+      responses:
+        200:
+          description: "Successful read blockchain information"
+          schema:
+            type: "array"
+            items:
+              properties:
+                fname:
+                  type: "string"
+                lname:
+                  type: "string"
+                timestamp:
+                  type: "string"
  /getinfo:
     get:
       operationId: "getinfo.read"
@@ -105,26 +125,6 @@ paths:
           type: string
           required: True
       operationId: "getblock.read"
-      tags:
-        - "Obsidiad Block Header by Hash"
-      summary: "Returns last block header by given hash."
-      description: "Returns last block header by given hash."
-      responses:
-        200:
-          description: "Successful read last block header"
-          schema:
-            type: "array"
-            items:
-              properties:
-                fname:
-                  type: "string"
-                lname:
-                  type: "string"
-                timestamp:
-                  type: "string"
-
- /gettransaction:
-      operationId: "gettransaction.read"
       tags:
         - "Obsidiad Block Header by Hash"
       summary: "Returns last block header by given hash."
