@@ -13,5 +13,4 @@ obsidiand = Obsidiand(rpc_host, rpc_port)
 #possible commands:
 #look at obsidiand.py
 def read(hash):
-    print("The hash is " + str(hash))
     return obsidiand.get_block_header_by_hash(hash)
