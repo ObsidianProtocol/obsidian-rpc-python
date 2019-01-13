@@ -124,12 +124,6 @@ paths:
                   type: "string"
 
  /gettransaction:
-    get:
-      parameters:
-        - in: query
-          name: txid
-          type: string
-          required: True
       operationId: "gettransaction.read"
       tags:
         - "Obsidiad Block Header by Hash"

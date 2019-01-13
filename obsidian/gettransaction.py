@@ -1,5 +1,5 @@
 from obsidian import Obsidiand
-
+import json
 
 #one of the seed nodes
 rpc_host = '209.97.174.174'
@@ -12,5 +12,6 @@ obsidiand = Obsidiand(rpc_host, rpc_port)
 #Call for the response
 #possible commands:
 #look at obsidiand.py
-def read(txid):
-    return obsidiand.get_transaction(txid)
+def read():
+    latestTransaction = obsidiand.get_last_block_header()['result']['block_header']["hash"]["transactions"]
+    return obsidiand.get_block(latestHash)
